@@ -1,0 +1,25 @@
+import express from 'express';
+import cors from 'cors';
+import morgan from 'morgan';
+import authRoutes from './routes/auth.routes.js';
+import groupRoutes from './routes/group.routes.js';
+import memberRoutes from './routes/member.routes.js';
+import transactionRoutes from './routes/transaction.routes.js';
+import financeRoutes from './routes/finance.routes.js';
+import messageRoutes from './routes/message.routes.js';
+import reportRoutes from './routes/report.routes.js';
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+app.use(morgan('dev'));
+app.get('/', (_, res) => res.json({ message: 'BC Management API is running' }));
+app.use('/api/auth', authRoutes);
+app.use('/api/groups', groupRoutes);
+app.use('/api/members', memberRoutes);
+app.use('/api/transactions', transactionRoutes);
+app.use('/api/finance', financeRoutes);
+app.use('/api/messages', messageRoutes);
+app.use('/api/reports', reportRoutes);
+app.use((err, req, res, next) => res.status(err.status || 500).json({ message: err.message || 'Server error' }));
+export default app;
