@@ -41,17 +41,4 @@ npm install --no-audit --no-fund
 npm run dev
 ```
 
-Open the Vite URL shown in terminal.
-
-## Important notes
-
-This is a working full-stack foundation, not a final regulated financial product. Before real chit-fund/business usage, add legal compliance checks, audit logs, RBAC permissions, backup strategy, payment gateway integration, real SMS/WhatsApp/email provider APIs, PDF receipts, and stronger validations.
-
-## Cron behavior
-
-Backend starts a daily cron at 12:05 AM. It scans every active group cycle whose due date has passed, creates/updates pending or overdue member-payment records, calculates penalties, marks overdue members as defaulter, and stores reminder messages in Message Logs. To test immediately on server start, set `RUN_DUE_SCAN_ON_START=true` in backend `.env`.
-
-dtae wiseall fil
-agent ke basis pr jo bhi mem hai unke andar unka bas download hai prty ledger
-
 search option and name se search kro and field add kro for personal and proffesiunal
