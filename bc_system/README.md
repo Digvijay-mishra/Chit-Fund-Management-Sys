@@ -30,7 +30,7 @@ npm run seed
 npm run dev
 ```
 
-Default seed login: `admin@bc.local` / `admin123`
+
 
 ## Run frontend
 
